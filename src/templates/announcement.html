@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Broadcast Page</title>
+    <link rel="stylesheet" href="./static/announcement.css">
+    <style>
+        /* Basic Styles for Microphone, Textbox, and File Upload */
+        .text-box-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .text-box {
+            width: 70%;
+            height: 100px;
+            margin-right: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        /* Box for Mic and Plus icons */
+        .icon-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 8px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .microphone-btn,
+        .file-upload-btn {
+            background-color: transparent;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .microphone-btn {
+            color: #007BFF;
+        }
+
+        .file-upload-btn {
+            color: #28a745;
+        }
+        .chk-div label{
+          display:block
+        }
+        .chk-more{
+        display:none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Heading and Back Button -->
+        <div class="header">
+            <button class="back-btn" >&#8592; </button>  <h2>Announcement</h2>
+
+        </div>
+
+        <!-- Text Box, Voice, and File Upload Section -->
+        <div class="text-box-section">
+            <!-- Icons Box (Mic and Plus) -->
+            <div class="icon-box">
+                <!-- Microphone Button -->
+                <button class="microphone-btn" id="mic-btn">🎤</button>
+
+                <!-- File Upload Button -->
+                <button class="file-upload-btn" id="upload-btn">➕</button>
+            </div>
+
+            <!-- Textarea -->
+            <textarea placeholder="Enter your message..." class="text-box" id="message-box"></textarea>
+
+            <!-- Hidden file input for file upload -->
+            <input type="file" class="file-input" id="file-input">
+        </div>
+
+
+        <div class="chk-div">
+                <label>
+                    <input type="checkbox" id="hr" value="All"> All
+                </label>
+                <label>
+                    <input type="checkbox" id="it" value="BSc CS">BSc CS
+                </label>
+                <label>
+                    <input type="checkbox" id="finance" value="BSc Mathematics"> BSc Mathematics
+                </label>
+
+
+        <div class="chk-more">
+                <label>
+                    <input type="checkbox" id="botany" value="BSc Botany"> BSc Botany
+                </label>
+
+            <label>
+                    <input type="checkbox" id="fcs" value="BSc FCS"> BSc FCS
+                </label>
+
+            <label>
+                    <input type="checkbox" id="chemistry" value="BSc Chemistry"> BSc Chemistry
+                </label>
+
+            <label>
+                    <input type="checkbox" id="psychology" value="BSc Psychology"> BSc Psychology
+                </label>
+
+            <label>
+                    <input type="checkbox" id="history" value="BA History"> BA History
+                </label>
+
+            <label>
+                    <input type="checkbox" id="english" value="BA English"> BA English
+                </label>
+
+             <label>
+                    <input type="checkbox" id="cop" value="BCom Cooperation"> BA English
+                </label>
+
+             <label>
+                    <input type="checkbox" id="ca" value="BCom Computer Application"> BCom Computer Application
+                </label>
+
+        </div>
+
+            <button onclick="seemore()">see more..</button>
+
+        </div>
+
+        <!-- Time Setting -->
+        <div class="time-section">
+            <label for="time">Set Time:</label>
+            <input type="time" id="time" class="time-input">
+        </div>
+
+        <!-- Broadcast Button -->
+        <div class="broadcast-section">
+            <button class="broadcast-btn">Broadcast</button>
+        </div>
+    </div>
+
+    <script>
+        // Variables for microphone functionality
+        const micBtn = document.getElementById('mic-btn');
+        const messageBox = document.getElementById('message-box');
+        let isRecording = false;
+        let mediaRecorder;
+        let audioChunks = [];
+
+        micBtn.addEventListener('click', async () => {
+            if (isRecording) {
+                mediaRecorder.stop();
+                micBtn.innerText = '🎤'; // Reset button to microphone icon
+                isRecording = false;
+            } else {
+                try {
+                    // Start recording
+                    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                    mediaRecorder = new MediaRecorder(stream);
+                    mediaRecorder.ondataavailable = event => {
+                        audioChunks.push(event.data);
+                    };
+                    mediaRecorder.onstop = () => {
+                        const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                        const audioUrl = URL.createObjectURL(audioBlob);
+                        const audio = new Audio(audioUrl);
+                        audio.play(); // Optionally play the recorded audio
+                        // You can process or upload the audio as needed here
+                    };
+                    mediaRecorder.start();
+                    micBtn.innerText = '⏹️'; // Change button to stop icon
+                    isRecording = true;
+                } catch (err) {
+                    alert('Error accessing microphone: ' + err);
+                }
+            }
+        });
+
+        // File upload button functionality
+        const uploadBtn = document.getElementById('upload-btn');
+        const fileInput = document.getElementById('file-input');
+
+        uploadBtn.addEventListener('click', () => {
+            fileInput.click(); // Trigger file input dialog
+        });
+
+        fileInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                console.log(`File selected: ${file.name}`);
+                // Handle file upload or process the file here
+            }
+        });
+
+        // Broadcast Button Functionality
+        document.querySelector('.broadcast-btn').addEventListener('click', function() {
+            const message = document.querySelector('.text-box').value;
+            const department = document.querySelector('#department').value;
+            const time = document.querySelector('#time').value;
+
+            if (message && department && time) {
+                alert(`Broadcasting message to ${department} at ${time}: ${message}`);
+            } else {
+                alert('Please fill out all fields.');
+            }
+        });
+        function seemore(){
+        const seeDiv = document.querySelector('.chk-more');
+        seeDiv.style.display = seeDiv.style.display ==='none' ? 'block' : 'none';
+        }
+
+    </script>
+</body>
+</html>

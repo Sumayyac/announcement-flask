@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./static/management.css">
+</head>
+<body>
+    <form action="addunion" method="post">
+        
+        <div class="two">
+        <label for="">Name :</label>
+        <input type="text" name="name"><br>
+    </div>
+    <div class="two">
+        <label for="">Department :</label>
+        <input type="text" name="dept"><br>
+    </div>
+    <div class="two">
+        <label for="">Semester :</label>
+        <input type="text" name="sem"><br>
+    </div>
+
+        <div class="two">
+        <label for="">Email :</label>
+        <input type="email" name="email"><br>
+    </div>
+
+    <div class="two">
+        <label for="">Phone :</label>
+        <input type="number" name="number"><br>
+    </div>
+
+    <div class="two">
+        <label for="">Username :</label>
+        <input type="text" name="username"><br>
+    </div>
+    <div class="two">
+        <label for="">Password :</label>
+        <input type="password" name="password"><br><br>
+    </div>
+        <div>
+            <button>Register</button>
+        </div>
+    </form>
+
+ <h2>Union Registration Details</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Semester</th>
+                <th>Phone</th>
+                <th>Email</th>
+
+            </tr>
+        </thead>
+        <tbody>
+         {%for i in value%}
+            <tr>
+                <td>{{i[1]}}</td>
+                <td>{{i[2]}}</td>
+                <td>{{i[3]}}</td>
+                <td>{{i[5]}}</td>
+                <td>{{i[4]}}</td>
+
+                <td><a href="/editunion?id={{i[0]}}">EDIT</a></td>
+                 <td><a href="/uniondelete?id={{i[0]}}" onclick="return confirm('are you sure you want to delete')">DELETE</a></td> <!-- You may choose not to display the password in plain text -->
+            </tr>
+         {%endfor%}
+            <!-- Additional rows will be populated based on the records -->
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./static/homeadmin.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/dist/boxicons.js.css' rel='stylesheet'>
+
+</head>
+<body>
+    <div class="top-bar">
+        <div class="dropdown">
+            <a href="#" class="top-bar">User</a>
+                 <div class="dropdown-content">
+                    <a href="hod">HOD</a>
+                    <a href="teacher">Teacher</a>
+                    <a href="rep">Rep</a>
+                    <a href="union">Union</a>
+                     <a href="staff">Staff</a>
+                 </div>
+        </div>
+        <div class="icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAAAAXNSR0IArs4c6QAAAupJREFUWEftmEnIjWEUx3/fwhwppZQxSuYxZGPIkGJlKAvTgsW3IjYWUqYsJDuxEFKGYiGlyBRliIylhCxsUMq0MITn/3Weerre+93ned538X25p27d933P+Z//PcNzz3lb6CTS0kl48l8S7QdMBSYA34EHwCPgaxVZqyKiwtjtyG0tIPTLnu0C9D1byhLtAZwFFjVgcA9YAHzKZVqW6D5gc6TzS8DCSN1/1MoQnQ7cSXQ8F7iWaNOmXoboMWB1otMTwKpEm9JEHwPjE52+AkYk2pQm+sN1dJdEpz+Brok2pYn+yXGYW25larRJtChTzYi2U79ZwckyMhLNGm3WaOJ5mlVuWUYdsUY1nfcyYvtrRrrwWWxQvwB9AmVhbrJr4fWuB9Qooi+B4WZ8ClgZAD0DxsQyND0NMhMDmzPAcrt+AYzMJXoVmGPGrwPSurWnzvrRHvftwI5A4Q0wxK4v2xZQaN8oottqgEcDzw1pACBHsdPQN2Aw8NHsFdmHASvtXHtzI1o7xR8EWgOwdc75kcj0L7P9yqsfBdYEtpNsa82KqCL+BBhr1r/tu4+qbq8ADgF96xB+b1O9diYvk22d9tdarbVq15VGqfdETgcIStcMQIOzl/5uf98CTAEUGT3TTq/tUwvg50C3J6CmCif9JY7ohbJE9WNuATMDIKV7PaAIp4jqWXuT73TZtttEHjwmotIdCDytSe8VO64+RDIdBOg4Uja8vHN1Ow5oiBFLVMDzgPOAXjp4UUp3Asddk6kWi0SdvsFKo1ugoMN/vnt5cTfmh6YQFd5s4KI7RroXgKvB9NF5K1zVoLbUYQW6Iqkd/34MSemkEpWN/qkOm6NYP6GeXgFtBN6mGOcQ9fjqVDlUZGLknKvxA8DNGOVanTJEPdYo12hLXRoXA9OCLGkDuG3Hzkn7F8vh2GZTBdHQ+XX3bmmW3bhhNZ1NLjRsEnVTV4eO6FpgqKVMk5UGj0qk6tRXQqoIpEm06tD+BYW3eyv1DE5XAAAAAElFTkSuQmCC"/><a href="announcements">Announcements</a>
+        </div>
+        <div class="icon"><img src="timetable-icon.png" ><a href="timetable">TimeTable</a></div>
+        </div>
+
+    </div>
+
+    <div class="main-content">
+       <table border="1">
+           <tr>
+               <th>Title</th>
+                <th>time</th>
+                <th>dept</th>
+               <th>file</th>
+               <th>Actions</th>
+           </tr>
+           {%for i in value%}
+           <tr>
+                    <td>{{i[1]}}</td>
+                    <td>{{i[2]}}</td>
+                    <td>{{i[3]}}</td>
+                    <td>{{i[4]}}</td>
+
+
+
+                    <td>
+                        {%if i[5]=='pending'%}
+                        <a href="/accept?id={{i[0]}}" class="btn">Accept</a><a href="/reject?id={{i[0]}}" class="btn">Reject</a>
+                        {%endif%}
+
+
+                    </td>
+                </tr>
+           {%endfor%}
+
+                <!-- End Dynamic Rows -->
+
+        </table>
+    </div>
+
+</body>
+</html>

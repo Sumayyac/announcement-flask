@@ -1,0 +1,283 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+
+.top-bar {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #808080;
+    padding: 10px;
+}
+
+
+.icon {
+    margin: 0 10px;
+}
+
+.icon img {
+    width: 24px;
+    height: 24px;
+}
+
+
+.main-content {
+    padding: 10px;
+}
+
+.data-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-wrap: nowrap; 
+}
+
+.data-item {
+    flex: 1;
+    margin-right: 20px;
+    font-size: 14px;
+    white-space: nowrap; 
+}
+
+.data-item a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.data-actions {
+    display: flex;
+    gap: 10px;
+    white-space: nowrap; 
+}
+
+.accept-btn, .reject-btn {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.accept-btn {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.reject-btn {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.accept-btn:hover {
+    background-color: #218838;
+}
+
+.reject-btn:hover {
+    background-color: #c82333;
+}
+
+
+
+/* From Uiverse.io by catraco */
+/*------ Settings ------*/
+.container {
+  --color: #a5a5b0;
+  --size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  font-size: var(--size);
+  user-select: none;
+  fill: var(--color);
+}
+
+.container .microphone-slash {
+  position: absolute;
+  animation: keyframes-fill .5s;
+}
+
+.container .microphone {
+  position: absolute;
+  display: none;
+  animation: keyframes-fill .5s;
+}
+
+/* ------ On check event ------ */
+.container input:checked ~ .microphone-slash {
+  display: none;
+}
+
+.container input:checked ~ .microphone {
+  display: block;
+}
+
+/* ------ Hide the default checkbox ------ */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* ------ Animation ------ */
+@keyframes keyframes-fill {
+  0% {
+    transform: rotate(0deg) scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: rotate(-10deg) scale(1.2);
+  }
+}
+
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Arial', sans-serif;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Table Header */
+table th {
+    background-color: #4CAF50; /* Green header */
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+/* Table Rows */
+table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #dddddd;
+    text-align: left;
+}
+
+/* Alternating Row Colors */
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* Hover Effect */
+table tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+/* Links Inside Table */
+table a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+table a:hover {
+    color: #0056b3;
+}
+
+/* Action Buttons */
+.accept, .reject {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.accept {
+    background-color: #4CAF50; /* Green for Accept */
+    color: white;
+}
+
+.accept:hover {
+    background-color: #45a049;
+}
+
+.reject {
+    background-color: #f44336; /* Red for Reject */
+    color: white;
+}
+
+.reject:hover {
+    background-color: #d32f2f;
+}
+
+
+
+
+
+
+
+
+ .navbar {
+            display: flex;
+            background-color: #333;
+            padding: 10px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 150px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown a {
+            color: blue;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+

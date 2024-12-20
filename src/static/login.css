@@ -1,0 +1,17 @@
+body{
+    background-color: ;
+}
+form{
+    background-color:grey;
+    width:280px;
+    margin-left: 420px;
+    margin-top: 350px;
+    padding: 10px;
+    border-radius: 30px;
+}
+.one{
+    padding: 5px;
+}
+button{
+    margin-left: 70px;
+}

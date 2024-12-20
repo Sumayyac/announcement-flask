@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./static/homeadmin.css">
+    
+</head>
+<body>
+    <div class="top-bar">
+        <div class="icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAAAAXNSR0IArs4c6QAAAupJREFUWEftmEnIjWEUx3/fwhwppZQxSuYxZGPIkGJlKAvTgsW3IjYWUqYsJDuxEFKGYiGlyBRliIylhCxsUMq0MITn/3Weerre+93ned538X25p27d933P+Z//PcNzz3lb6CTS0kl48l8S7QdMBSYA34EHwCPgaxVZqyKiwtjtyG0tIPTLnu0C9D1byhLtAZwFFjVgcA9YAHzKZVqW6D5gc6TzS8DCSN1/1MoQnQ7cSXQ8F7iWaNOmXoboMWB1otMTwKpEm9JEHwPjE52+AkYk2pQm+sN1dJdEpz+Brok2pYn+yXGYW25larRJtChTzYi2U79ZwckyMhLNGm3WaOJ5mlVuWUYdsUY1nfcyYvtrRrrwWWxQvwB9AmVhbrJr4fWuB9Qooi+B4WZ8ClgZAD0DxsQyND0NMhMDmzPAcrt+AYzMJXoVmGPGrwPSurWnzvrRHvftwI5A4Q0wxK4v2xZQaN8oottqgEcDzw1pACBHsdPQN2Aw8NHsFdmHASvtXHtzI1o7xR8EWgOwdc75kcj0L7P9yqsfBdYEtpNsa82KqCL+BBhr1r/tu4+qbq8ADgF96xB+b1O9diYvk22d9tdarbVq15VGqfdETgcIStcMQIOzl/5uf98CTAEUGT3TTq/tUwvg50C3J6CmCif9JY7ohbJE9WNuATMDIKV7PaAIp4jqWXuT73TZtttEHjwmotIdCDytSe8VO64+RDIdBOg4Uja8vHN1Ow5oiBFLVMDzgPOAXjp4UUp3Asddk6kWi0SdvsFKo1ugoMN/vnt5cTfmh6YQFd5s4KI7RroXgKvB9NF5K1zVoLbUYQW6Iqkd/34MSemkEpWN/qkOm6NYP6GeXgFtBN6mGOcQ9fjqVDlUZGLknKvxA8DNGOVanTJEPdYo12hLXRoXA9OCLGkDuG3Hzkn7F8vh2GZTBdHQ+XX3bmmW3bhhNZ1NLjRsEnVTV4eO6FpgqKVMk5UGj0qk6tRXQqoIpEm06tD+BYW3eyv1DE5XAAAAAElFTkSuQmCC"/><a href="announcements">Announcements</a>
+        </div>
+
+        <div class="icon"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAAAAXNSR0IArs4c6QAABCVJREFUWEftmFnIVkUYx3+fV7lQImIukXqjlpVbRQWWG66UKZZrqSRaXuiFpXYh4Y0LihuCG0IuueSFihpZmi0XphVWbgVCqCmKuN2ooKjzlxkZxznnPe/7niOI/uHj4z3nmWf+8+xzanhIUPOQ8OSRIloH6Ag8DTSwf3LUBft3FvgDuFqN9yq16PPAOKAz0CEjAZH9BVgK/JtxzV2xcomK4BfAIKBWuZtZ+ZvAOmA6cCyrjqxEGwIzgI+qIBhyumHCZQkwDbhcinAWoiOAxcBTEWX7gV+BP4F/AMXjaSvXDGgEPAe0B94AOkV0nAfGGJktaWRLER0OrI0oWAksBA6WskTwXkk3ARgZWfeOOci2JH1pRPtHTrnHWO2TSpIhIPACsAJ4LXj+pk24+/gmEW0BHAZUehwUT+PLtGCauJLxS+ADT+gc0BbQ/3uQRHQf8KonuQz4OEeSvqqvjVHe8x58C/TJQlTJs8YT/M0mgrK0CDwB/GVKVitPeQ9To3f7m8UsusvESXdP6FlTlk4WwdDT+SLwt/d7dZhwIVGVlP+9BauAUQkkdYDlQE8bz1NMuHwTyPYFZtu4+86UrrHAiQR93wOypKB2q3Z8zcmGRHuZTFSMOHQDlOkxSE7yDpdMJuugV+wDJeIpoL4ns9PU3d4J+sJS+LKdEe6Ih0RVeFU2HJ6xm8V0qxWG67sAP1nht4Afg4W3Ujqb2rMqjYOIq9VGiX5uW2XSe39fFXvVQx/NPdcqNI4H7w8BiscYanve0PupNmyiRNU11HEc1ALvq2n2peLvK8+1OuSsgIE2m2mfKTRkpTCO3RJlvT9VjbZ1Nkr0fdObN3qbKQaVBElQHL5iMvS/lCSRZVsCKnMufmP6NJFt8l509UMnjLGmQUyqc+hkDwI7AHnJQVl/0f2I1dEDdtrJ4v68DhAmkrw6xFceI6pWqb7uoPFrQF6MInqURL8DIuughvNDKaJ6fxRo4wlOBuYURFZxqfh0ULL1C/dKGkpUbBX8PmJZXS13zbqqBA7qRK1jiZk2jw6z5ccnozanVqk4rgYv2Uve64GSocaTG2KKS034k4C5kYVqq/OA7WWy1aCsWi1CIQabONXIF0UpolqkYVlkFfQhNpupZ2DkeT17z29sk0QW1NW6XUT2DPAhIG8lIgtRLW5iO5Y/4Oq5+rr6u8O7prhr4noyo6VVUTRf6IKXiqxEnRKNdOu9ryE+0QWmQE8staF9L4LzgZ8zylf07UkTkSYjZ1HNqyoxqhRp2Gu+qmy1E1HZg3i5FhURn6ju8HUjd361Xt315VINNbpqKBYrRrVEw431xUN1UX07V+RJVFZ7u6j7VV5EFwGfAtdzNaOnrFqihbk6PHA1RAt1dV5EldGfFenqPIhqbjxSVCwm6a3E9Q+a4539HhPN2+y3ASOJuCuEQ0ADAAAAAElFTkSuQmCC"/><a href="feedback">Feedback</a>
+        </div>
+        <div class="icon"><img src=""><a href="profile">Profile</a>
+</div>
+
+
+
+    </div>
+    <div class="main-content">
+        <table border="1">
+           <tr>
+               <th>Title</th>
+                <th>time</th>
+                <th>dept</th>
+               <th>file</th>
+               <th>Actions</th>
+           </tr>
+           {%for i in value%}
+           <tr>
+                    <td>{{i[1]}}</td>
+                    <td>{{i[2]}}</td>
+                    <td>{{i[3]}}</td>
+                    <td>{{i[4]}}</td>
+
+
+
+                    <td>
+                        {%if i[5]=='pending'%}
+                        <a href="/accept?id={{i[0]}}" class="btn">Accept</a><a href="/reject?id={{i[0]}}" class="btn">Reject</a>
+                        {%endif%}
+
+
+                    </td>
+                </tr>
+           {%endfor%}
+
+                <!-- End Dynamic Rows -->
+
+        </table>
+    </div>
+
+</body>
+</html>

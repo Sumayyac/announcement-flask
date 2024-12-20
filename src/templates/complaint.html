@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Send Feedback</title>
+  <link rel="stylesheet" href="./static/sendfeedback.css">
+</head>
+<body>
+  <div class="feedback-container">
+    <h1>Send Feedback</h1>
+
+     <!-- Dropdown Section -->
+      <form action="addfeedback" method="post">
+
+    <!-- Feedback Section -->
+    <label for="feedback">Feedback:</label><br>
+    <textarea id="feedback" rows="4" cols="50" placeholder="Write your feedback..." name="feedback"></textarea><br><br>
+
+
+
+    <!-- Submit Button -->
+    <button type="submit">Send</button><br><br>
+      </form>
+  </div>
+
+
+
+<div class="main-content">
+       <table border="1">
+           <tr>
+
+                <th>feedback</th>
+               <th>date</th>
+
+           </tr>
+           {%for i in value%}
+           <tr>
+
+                    <td>{{i[1]}}</td>
+                    <td>{{i[2]}}</td>
+
+
+                </tr>
+           {%endfor%}
+
+                <!-- End Dynamic Rows -->
+
+        </table>
+    </div>
+
+</body>
+</html>
